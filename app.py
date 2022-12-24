@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from numpy import random
 import requests
-import json
+import os
 df = pd.read_csv('final_movies.csv')
 app = Flask(__name__)
 CORS(app)
@@ -79,4 +79,4 @@ def get_movie_similarity(imdb_id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000), debug=True)
