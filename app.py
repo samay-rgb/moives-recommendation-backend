@@ -79,4 +79,4 @@ def get_movie_similarity(imdb_id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000), debug=True)
+    app.run(debug=True, port=os.getenv('PORT', 5000))
